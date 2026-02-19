@@ -17,6 +17,7 @@
     <modules>
         <module>framework</module>
         <module>kata/string-kata</module>
+        <module>kata/collections-kata</module>
     </modules>
 
     <build>

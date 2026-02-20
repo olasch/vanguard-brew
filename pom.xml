@@ -4,7 +4,7 @@
 
     <groupId>no.kata.java</groupId>
     <artifactId>KataJava</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>THIS.IS.CODE.ONLY</version>
     <packaging>pom</packaging>
     <name>Code Kata Java</name>
 
@@ -12,20 +12,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
+        <junit-jupiter>6.0.1</junit-jupiter>
     </properties>
 
     <modules>
         <module>framework</module>
-        <module>kata/string-kata</module>
-        <module>kata/collections-kata</module>
+        <module>kata</module>
     </modules>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.2</version>
-            </plugin>
-        </plugins>
-    </build>
 </project>

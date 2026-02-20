@@ -3,11 +3,13 @@ package no.kata.java.set;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
-@DisplayName("Unique Letters Only (String to Set)")
+@Tag("Set")
+@DisplayName("Set - Unique Letters Only (String to Set)")
 public class UniqueLettersTest extends BasicKataTestBase {
 
     @Test

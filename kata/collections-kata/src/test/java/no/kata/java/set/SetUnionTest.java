@@ -3,12 +3,14 @@ package no.kata.java.set;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Set;
 
-@DisplayName("The Merger (Set Union)")
+@Tag("Set")
+@DisplayName("Set - The Merger (Set Union)")
 public class SetUnionTest extends BasicKataTestBase {
 
     @Test

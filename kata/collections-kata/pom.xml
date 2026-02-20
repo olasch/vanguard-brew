@@ -6,19 +6,10 @@
 
     <parent>
         <groupId>no.kata.java</groupId>
-        <artifactId>KataJava</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
+        <artifactId>Kata</artifactId>
+        <version>THIS.IS.CODE.ONLY</version>
     </parent>
 
     <artifactId>CollectionsKata</artifactId>
     <name>Collections Kata</name>
-
-    <dependencies>
-        <dependency>
-            <groupId>no.kata.java</groupId>
-            <artifactId>KataJavaFramework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>

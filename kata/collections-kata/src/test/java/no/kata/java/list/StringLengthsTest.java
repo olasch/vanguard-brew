@@ -3,11 +3,13 @@ package no.kata.java.list;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-@DisplayName("String Lengths")
+@Tag("List")
+@DisplayName("List - String Lengths")
 public class StringLengthsTest extends BasicKataTestBase {
 
     @Test

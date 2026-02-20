@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>no.kata.java</groupId>
+        <artifactId>KataJava</artifactId>
+        <version>THIS.IS.CODE.ONLY</version>
+    </parent>
+
+    <artifactId>Kata</artifactId>
+    <name>Kata</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>collections-kata</module>
+        <module>string-kata</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>no.kata.java</groupId>
+            <artifactId>KataJavaFramework</artifactId>
+            <version>THIS.IS.CODE.ONLY</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit-jupiter}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

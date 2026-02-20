@@ -3,13 +3,15 @@ package no.kata.java.map;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@DisplayName("Invert the Map")
+@Tag("Map")
+@DisplayName("Map - Invert the Map")
 public class InvertMapTest extends BasicKataTestBase {
 
     @Test

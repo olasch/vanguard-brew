@@ -3,11 +3,13 @@ package no.kata.java.list;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-@DisplayName("Reverse the List")
+@Tag("List")
+@DisplayName("List - Reverse the List")
 public class ReverseListTest extends BasicKataTestBase {
 
     @Test

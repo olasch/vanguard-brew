@@ -3,12 +3,14 @@ package no.kata.java.map;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Map;
 
-@DisplayName("List to Map (Animal Indexer)")
+@Tag("Map")
+@DisplayName("Map - List to Map (Animal Indexer)")
 public class AnimalListToMapTest extends BasicKataTestBase {
 
     @Test

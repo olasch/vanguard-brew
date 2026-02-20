@@ -3,12 +3,14 @@ package no.kata.java.set;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Set;
 
-@DisplayName("The Missing Pieces (Set Difference)")
+@Tag("Set")
+@DisplayName("Set - The Missing Pieces (Set Difference)")
 public class SetDifferenceTest extends BasicKataTestBase {
 
     @Test

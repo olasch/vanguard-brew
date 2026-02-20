@@ -3,11 +3,13 @@ package no.kata.java.map;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
-@DisplayName("Adults Only Filter")
+@Tag("Map")
+@DisplayName("Map - Adults Only Filter")
 public class AdultsOnlyFilterTest extends BasicKataTestBase {
 
     @Test

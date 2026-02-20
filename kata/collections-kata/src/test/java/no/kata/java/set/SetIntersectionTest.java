@@ -3,12 +3,14 @@ package no.kata.java.set;
 import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Set;
 
-@DisplayName("The Common Ground (Intersection of Multiple Lists)")
+@Tag("Set")
+@DisplayName("Set - The Common Ground (Intersection of Multiple Lists)")
 public class SetIntersectionTest extends BasicKataTestBase {
 
     @Test

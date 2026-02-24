@@ -1,13 +1,16 @@
-package no.kata.java;
+package no.kata.java.split;
 
+import no.kata.java.BasicKataTestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-@DisplayName("String Split")
-public class StringSplitTest extends BasicKataTestBase {
+@DisplayName("String - Separator Splitter")
+@Tag("String")
+public class SeparatorSplitTest extends BasicKataTestBase {
 
     @Test
     @DisplayName(

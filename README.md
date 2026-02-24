@@ -50,3 +50,4 @@ Fun fact, for some IDEs you can just click the run button, and it runs the suite
 * ```ListKatasSuite```
 * ```MapKatasSuite```
 * ```SetKatasSuite```
+* ```StringKatasSuite```

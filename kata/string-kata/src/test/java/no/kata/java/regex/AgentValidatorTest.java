@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Agent ID Validator")
+@DisplayName("String - Agent ID Validator")
 @Tag("String")
 public class AgentValidatorTest extends BasicKataTestBase {
 

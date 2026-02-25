@@ -1,0 +1,71 @@
+package no.kata.java.regex;
+
+import no.kata.java.BasicKataTestBase;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+import java.util.Objects;
+
+import static no.kata.java.Extractors.regexGroupsAsString;
+
+@DisplayName("String - File Extension Extractor")
+@Tag("String")
+public class FileExtensionRegexTest extends BasicKataTestBase {
+
+    @Test
+    @DisplayName("When the string ends with a standard 3-character extension, captures it. " +
+            "E.g.: 'document.txt' returns '.txt'")
+    @Order(1)
+    void testStandardExtensionAtEnd() {
+        verify(new FileExtensionRegexKata(),
+                ".pdf",
+                regex -> regexGroupsAsString.apply(regex, "/top_secret/ufo_report.pdf"),
+                Objects::equals);
+    }
+
+    @Test
+    @DisplayName("When the extension is in the middle of a sentence, ignores it because it is not at the end. " +
+            "E.g.: 'Run app.exe now' returns ''")
+    @Order(2)
+    void testExtensionInMiddle() {
+        verify(new FileExtensionRegexKata(),
+                "",
+                regex -> regexGroupsAsString.apply(regex, "Execute order_66.bat immediately."),
+                Objects::equals);
+    }
+
+    @Test
+    @DisplayName("When the file extension is longer than 3 characters, ignores it. " +
+            "E.g.: 'photo.jpeg' returns ''")
+    @Order(3)
+    void testExtensionTooLong() {
+        verify(new FileExtensionRegexKata(),
+                "",
+                regex -> regexGroupsAsString.apply(regex, "vacation_photos.jpeg"),
+                Objects::equals);
+    }
+
+    @Test
+    @DisplayName("When the file extension is shorter than 3 characters, ignores it. " +
+            "E.g.: 'script.js' returns ''")
+    @Order(4)
+    void testExtensionTooShort() {
+        verify(new FileExtensionRegexKata(),
+                "",
+                regex -> regexGroupsAsString.apply(regex, "virus_payload.sh"),
+                Objects::equals);
+    }
+
+    @Test
+    @DisplayName("When the filename has multiple dots, captures only the final valid 3-character extension. " +
+            "E.g.: 'archive.tar.zip' returns '.zip'")
+    @Order(5)
+    void testMultipleDots() {
+        verify(new FileExtensionRegexKata(),
+                ".zip",
+                regex -> regexGroupsAsString.apply(regex, "jurassic_park_source_code.tar.zip"),
+                Objects::equals);
+    }
+}

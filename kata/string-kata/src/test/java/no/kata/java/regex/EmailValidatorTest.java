@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Bouncer (Email Validator)")
+@DisplayName("String - Bouncer (Email Validator)")
 @Tag("String")
 public class EmailValidatorTest extends BasicKataTestBase {
 

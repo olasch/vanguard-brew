@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Left Padder")
+@DisplayName("String - Left Padder")
 @Tag("String")
 public class LeftPadderTest extends BasicKataTestBase {
 

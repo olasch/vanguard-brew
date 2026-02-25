@@ -1,7 +1,7 @@
 package no.kata.java;
 
 /**
- * A functional interface for a basic code kata.
+ * An interface for a basic code kata.
  * By basic, we are aiming at a kata that can be completed with only what is available in the JDK.
  *
  * @param <I> The type of the input to this kata

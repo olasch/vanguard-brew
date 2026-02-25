@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Palindrome Detective")
+@DisplayName("String - Palindrome Detective")
 @Tag("String")
 public class PalindromeDetectiveTest extends BasicKataTestBase {
 

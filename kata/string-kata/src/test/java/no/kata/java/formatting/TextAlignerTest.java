@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-@DisplayName("String - The Text Aligner")
+@DisplayName("String - Text Aligner")
 @Tag("String")
 public class TextAlignerTest extends BasicKataTestBase {
 

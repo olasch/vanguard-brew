@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Credit Card Masker")
+@DisplayName("String - Credit Card Masker")
 @Tag("String")
 public class CreditCardMaskerTest extends BasicKataTestBase {
 

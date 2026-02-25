@@ -3,7 +3,9 @@ package no.kata.java;
 import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.function.BiPredicate;
+import java.util.function.Function;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BasicKataTestBase {
@@ -17,9 +19,9 @@ public class BasicKataTestBase {
     @BeforeAll
     static void initClass(final TestInfo testInfo) {
         System.out.println();
-        System.out.println("╔" + "═".repeat(WIDTH-2) + "╗");
+        System.out.println("╔" + "═".repeat(WIDTH - 2) + "╗");
         System.out.println("║ KATA SUITE: " + testInfo.getDisplayName());
-        System.out.println("╚" + "═".repeat(WIDTH-2) + "╝");
+        System.out.println("╚" + "═".repeat(WIDTH - 2) + "╝");
     }
 
     /**
@@ -58,6 +60,37 @@ public class BasicKataTestBase {
 
         R actual = kata.solve(input);
 
+        doVerify(expected, verifier, actual, prettyExpected);
+    }
+
+    /**
+     * A wrapper method to handle logging and assertions.
+     * Use this instead of direct Assertions.assertEquals in your tests.
+     *
+     * @param kata      The implementation logic
+     * @param expected  The expected generic output
+     * @param extractor The actual result using the returned value from the kata
+     * @param verifier  The verifier used for comparing
+     * @param <A>       Output type of the kata
+     * @param <R>       Result type from the extractor
+     */
+    protected <R, A> void verify(BasicNoArgKata<A> kata, R expected, Function<A, R> extractor, BiPredicate<R, R> verifier) {
+        String prettyExpected = prettyFormat(expected);
+        System.out.println("   Expecting : " + prettyExpected);
+
+        A actual = kata.solve();
+
+        String prettyActual = prettyFormat(actual);
+        System.out.println("   Returned  : " + prettyActual);
+
+        R result = Optional.ofNullable(actual)
+                .map(extractor)
+                .orElse(null);
+
+        doVerify(expected, verifier, result, prettyExpected);
+    }
+
+    private static <R> void doVerify(R expected, BiPredicate<R, R> verifier, R actual, String prettyExpected) {
         String prettyActual = prettyFormat(actual);
         System.out.println("   Actual    : " + prettyActual);
 
@@ -68,7 +101,7 @@ public class BasicKataTestBase {
             Assertions.fail(failureMessage);
         }
 
-        System.out.println("✅ Result   : PASS");
+        System.out.println("✅ Kata Passed!");
     }
 
     private static <I> String prettyFormat(I input) {
@@ -79,6 +112,10 @@ public class BasicKataTestBase {
 
         if (input instanceof String[] strings) {
             return Arrays.toString(strings);
+        }
+
+        if ("".equals(input)) {
+            return "''";
         }
 
         return input.toString();

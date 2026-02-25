@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Number Extractor")
+@DisplayName("String - Number Extractor")
 @Tag("String")
 public class NumberExtractorTest extends BasicKataTestBase {
 

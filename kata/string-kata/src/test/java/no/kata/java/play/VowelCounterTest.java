@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Vowel Counter")
+@DisplayName("String - Vowel Counter")
 @Tag("String")
 public class VowelCounterTest extends BasicKataTestBase {
 

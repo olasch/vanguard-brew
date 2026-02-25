@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-@DisplayName("String - The Fixed-Length Chunker")
+@DisplayName("String - Fixed-Length Chunker")
 @Tag("String")
 public class FixedLengthChunkerTest extends BasicKataTestBase {
 

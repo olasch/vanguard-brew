@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Password Inspector")
+@DisplayName("String - Password Inspector")
 @Tag("String")
 public class PasswordInspectorTest extends BasicKataTestBase {
 

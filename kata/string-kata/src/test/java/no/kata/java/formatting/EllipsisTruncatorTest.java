@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Ellipsis Truncator")
+@DisplayName("String - Ellipsis Truncator")
 @Tag("String")
 public class EllipsisTruncatorTest extends BasicKataTestBase {
 

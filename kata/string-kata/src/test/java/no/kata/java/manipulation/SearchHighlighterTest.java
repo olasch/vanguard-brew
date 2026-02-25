@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Search Highlighter")
+@DisplayName("String - Search Highlighter")
 @Tag("String")
 public class SearchHighlighterTest extends BasicKataTestBase {
 

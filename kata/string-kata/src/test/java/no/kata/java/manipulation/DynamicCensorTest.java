@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-@DisplayName("String - The Dynamic Censor")
+@DisplayName("String - Dynamic Censor")
 @Tag("String")
 public class DynamicCensorTest extends BasicKataTestBase {
 

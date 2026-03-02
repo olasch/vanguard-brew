@@ -17,6 +17,7 @@
     <modules>
         <module>collections-kata</module>
         <module>string-kata</module>
+        <module>date-kata</module>
     </modules>
 
     <dependencies>

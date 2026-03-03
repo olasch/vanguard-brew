@@ -1,16 +1,23 @@
 package no.kata.java;
 
+import org.jspecify.annotations.NonNull;
 import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiPredicate;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.regex.MatchResult;
+import java.util.regex.Pattern;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BasicKataTestBase {
 
-    public static final int WIDTH = 85;
+    private static final int TOTAL_WIDTH = 85;
+    private static final int CONTENT_WIDTH = TOTAL_WIDTH - 2;
+    private static final int HEADER_WIDTH = 10;
 
     /**
      * Runs once before any tests in the class are executed.
@@ -18,10 +25,9 @@ public class BasicKataTestBase {
      */
     @BeforeAll
     static void initClass(final TestInfo testInfo) {
-        System.out.println();
-        System.out.println("╔" + "═".repeat(WIDTH - 2) + "╗");
-        System.out.println("║ KATA SUITE: " + testInfo.getDisplayName());
-        System.out.println("╚" + "═".repeat(WIDTH - 2) + "╝");
+        printFrame("╔" + "═".repeat(TOTAL_WIDTH - 2) + "╗");
+        printText("KATA SUITE: " + testInfo.getDisplayName());
+        printFrame("╚" + "═".repeat(TOTAL_WIDTH - 2) + "╝");
     }
 
     /**
@@ -30,14 +36,16 @@ public class BasicKataTestBase {
      */
     @BeforeEach
     void init(final TestInfo testInfo) {
-        System.out.println("\n" + "=".repeat(WIDTH));
-        System.out.printf("🚀 Executing : %s", testInfo.getDisplayName());
-        System.out.println("\n" + "-".repeat(WIDTH));
+        printFrame("=".repeat(TOTAL_WIDTH));
+        printText(testInfo.getDisplayName());
+        printFrame("-".repeat(TOTAL_WIDTH));
+
     }
 
     @AfterEach
     void tearDown() {
-        System.out.println("-".repeat(WIDTH));
+        printFrame("-".repeat(TOTAL_WIDTH));
+        System.out.println();
     }
 
     /**
@@ -55,8 +63,8 @@ public class BasicKataTestBase {
         String prettyInput = prettyFormat(input);
         String prettyExpected = prettyFormat(expected);
 
-        System.out.println("   Input     : " + prettyInput);
-        System.out.println("   Expecting : " + prettyExpected);
+        printWithHeader("Input", prettyInput);
+        printWithHeader("Expecting", prettyExpected);
 
         R actual = kata.solve(input);
 
@@ -76,12 +84,12 @@ public class BasicKataTestBase {
      */
     protected <R, A> void verify(BasicNoArgKata<A> kata, R expected, Function<A, R> extractor, BiPredicate<R, R> verifier) {
         String prettyExpected = prettyFormat(expected);
-        System.out.println("   Expecting : " + prettyExpected);
+        printWithHeader("Expecting", prettyExpected);
 
         A actual = kata.solve();
 
         String prettyActual = prettyFormat(actual);
-        System.out.println("   Returned  : " + prettyActual);
+        printWithHeader("Returned", prettyActual);
 
         R result = Optional.ofNullable(actual)
                 .map(extractor)
@@ -92,16 +100,54 @@ public class BasicKataTestBase {
 
     private static <R> void doVerify(R expected, BiPredicate<R, R> verifier, R actual, String prettyExpected) {
         String prettyActual = prettyFormat(actual);
-        System.out.println("   Actual    : " + prettyActual);
+        printWithHeader("Actual", prettyActual);
+        System.out.println();
 
         if (!verifier.test(expected, actual)) {
             String failureMessage = "❌ Kata failed! Expected " + prettyExpected + " but got " + prettyActual;
-            System.out.println(failureMessage);
+            printText(failureMessage);
 
             Assertions.fail(failureMessage);
         }
 
-        System.out.println("✅ Kata Passed!");
+        printText("✅ Kata Passed!");
+    }
+
+    private static void printFrame(String text) {
+        printWrapped("", text, 0, TOTAL_WIDTH);
+    }
+
+    private static void printText(String text) {
+        printWrapped("", text, 0, CONTENT_WIDTH);
+    }
+
+    private static void printWithHeader(String header, String text) {
+        printWrapped(header, text, HEADER_WIDTH, CONTENT_WIDTH);
+    }
+
+    private static void printWrapped(String header, String text, int headerWidth, int textWidth) {
+        final AtomicBoolean isFirstLine = new AtomicBoolean(true);
+
+        String regex = "(?s).{1," + (textWidth - headerWidth) + "}(?!\\S)";
+
+        Pattern.compile(regex)
+                .matcher(text)
+                .results()
+                .map(MatchResult::group)
+                .forEachOrdered(doPrint(header, headerWidth, isFirstLine));
+    }
+
+    private static @NonNull Consumer<String> doPrint(String header, int headerWidth, AtomicBoolean isFirstLine) {
+        return line -> {
+            if (headerWidth == 0) {
+                System.out.printf("%n%s", line.trim());
+            } else {
+                System.out.printf("%n%-" + headerWidth + "s %s",
+                        isFirstLine.getAndSet(false) ? header : "",
+                        line.trim()
+                );
+            }
+        };
     }
 
     private static <I> String prettyFormat(I input) {

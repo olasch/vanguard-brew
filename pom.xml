@@ -4,7 +4,7 @@
 
     <groupId>io.code.vanguard.brew</groupId>
     <artifactId>VanguardBrew</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.2</version>
     <packaging>pom</packaging>
     <name>Vanguard Brew: Java Katas</name>
 

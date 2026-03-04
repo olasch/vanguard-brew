@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>no.kata.java</groupId>
-        <artifactId>KataJava</artifactId>
-        <version>THIS.IS.CODE.ONLY</version>
+        <groupId>io.code.vanguard.brew</groupId>
+        <artifactId>VanguardBrew</artifactId>
+        <version>0.1.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>KataJavaFramework</artifactId>
-    <name>Code Kata Java Framework</name>
+    <artifactId>VanguardBrewFramework</artifactId>
+    <name>Vanguard Brew - Framework</name>
 
     <dependencies>
         <!-- TEST -->

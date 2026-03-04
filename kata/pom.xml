@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>no.kata.java</groupId>
-        <artifactId>KataJava</artifactId>
-        <version>THIS.IS.CODE.ONLY</version>
+        <groupId>io.code.vanguard.brew</groupId>
+        <artifactId>VanguardBrew</artifactId>
+        <version>0.1.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Kata</artifactId>
-    <name>Kata</name>
+    <artifactId>VanguardBrewKatas</artifactId>
+    <name>Vanguard Brew - Katas</name>
     <packaging>pom</packaging>
 
     <modules>
@@ -22,9 +22,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>no.kata.java</groupId>
-            <artifactId>KataJavaFramework</artifactId>
-            <version>THIS.IS.CODE.ONLY</version>
+            <groupId>io.code.vanguard.brew</groupId>
+            <artifactId>VanguardBrewFramework</artifactId>
+            <version>0.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>

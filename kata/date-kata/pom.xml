@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>no.kata.java</groupId>
-        <artifactId>Kata</artifactId>
-        <version>THIS.IS.CODE.ONLY</version>
+        <groupId>io.code.vanguard.brew</groupId>
+        <artifactId>VanguardBrewKatas</artifactId>
+        <version>0.1.2</version>
     </parent>
 
-    <artifactId>DateKata</artifactId>
-    <name>Date Kata</name>
+    <artifactId>VanguardBrewDateKata</artifactId>
+    <name>Vanguard Brew - Katas - Date Kata</name>
 </project>

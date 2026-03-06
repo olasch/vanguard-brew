@@ -61,6 +61,13 @@ cd kata/collections-kata
 mvn test -Dgroups=List
 ```
 
+Or run an individual test:
+
+```bash
+cd kata/string-kata
+mvn test -Dtest='VowelCounterTest#testNoVowels'
+```
+
 ---
 
 ## 🌳 Git Strategy: Master the Flow

@@ -18,6 +18,11 @@ Pick the method that fits your workflow:
 * **Download ZIP:** For a one-time "tasting" session without Git history.
 
 ### 2. Prepare the Station (Build)
+
+> [NOTE]
+> Include Maven wrapper for easier bootstrapping:
+> https://maven.apache.org/tools/wrapper/
+
 This project is built with **Maven**. 
 > [IMPORTANT]
 > Since we use a modular framework, you must install the core logic first:
@@ -46,7 +51,13 @@ Each "Kata Category" is a self-contained module with a standard layout:
 
 If you prefer the command line, you can run specific "Flavor Profiles" (tags):
 
+> [NOTE]
+> Add note that you need to be in the correct
+> subdir for this work, does not work from the
+> root dir.
+
 ```bash
+cd kata/collections-kata
 mvn test -Dgroups=List
 ```
 

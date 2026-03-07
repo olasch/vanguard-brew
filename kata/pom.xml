@@ -18,6 +18,10 @@
         <module>collections-kata</module>
         <module>string-kata</module>
         <module>date-kata</module>
+<<<<<<< HEAD
+=======
+        <module>objects-kata</module>
+>>>>>>> upstream/main
     </modules>
 
     <dependencies>

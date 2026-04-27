@@ -10,6 +10,6 @@
         <version>0.1.6</version>
     </parent>
 
-    <artifactId>VanguardBrewStringKata</artifactId>
-    <name>Vanguard Brew - Katas - String Kata</name>
+    <artifactId>VanguardBrewProcessionKata</artifactId>
+    <name>Vanguard Brew - Katas - Procession Kata</name>
 </project>

@@ -79,7 +79,7 @@ public interface Printerface {
                                      int textWidth) {
         final AtomicBoolean isFirstLine = new AtomicBoolean(true);
 
-        String regex = "(?s).{1," + (textWidth - headerWidth) + "}(?!\\S)";
+        String regex = "(.{1," + (textWidth - headerWidth) + "})(?:(?<=[\\[\\],])|\\s+|$)";
 
         Pattern.compile(regex)
                 .matcher(text)

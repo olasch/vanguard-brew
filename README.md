@@ -152,6 +152,7 @@ topic.
 | **`SealingKatasSuite`**      | Lock down domain models with sealed classes and exhaustive pattern matching.          |
 | **`StateMachineKatasSuite`** | Master state machines by building a pattern-matched espresso maker.                   |
 | **`StreamKatasSuite`**       | Streamline functional data pipelines and aggregations using the Java Stream API.      |
+| **`ConcurrencyKatasSuite`**  | Master parallel brewing from raw OS threads to `VirtualThread`s.                      |
 
 ---
 

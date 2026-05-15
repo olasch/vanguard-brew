@@ -153,6 +153,7 @@ topic.
 | **`StateMachineKatasSuite`** | Master state machines by building a pattern-matched espresso maker.                   |
 | **`StreamKatasSuite`**       | Streamline functional data pipelines and aggregations using the Java Stream API.      |
 | **`ConcurrencyKatasSuite`**  | Master parallel brewing from raw OS threads to `VirtualThread`s.                      |
+| **`FunctionalKatasSuite`**   | Build unbreakable, null-safe processing pipelines using core functional interfaces.   |
 
 ---
 

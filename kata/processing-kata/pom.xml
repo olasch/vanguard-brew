@@ -7,9 +7,9 @@
     <parent>
         <groupId>io.code.vanguard.brew</groupId>
         <artifactId>VanguardBrewKatas</artifactId>
-        <version>0.1.7</version>
+        <version>0.1.8</version>
     </parent>
 
-    <artifactId>VanguardBrewProcessionKata</artifactId>
-    <name>Vanguard Brew - Katas - Procession Kata</name>
+    <artifactId>VanguardBrewProcessingKata</artifactId>
+    <name>Vanguard Brew - Katas - Processing Kata</name>
 </project>
